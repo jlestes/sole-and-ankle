@@ -27,7 +27,8 @@ const Wrapper = styled.div`
   color: ${COLORS.gray[300]};
   background-color: ${COLORS.gray[900]};
   display: flex;
-  padding: 0.5rem 2rem;
+  padding: 0 32px;
+  height: 40px;
   gap: 24px;
   align-items: center;
 `;
