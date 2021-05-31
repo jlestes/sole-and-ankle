@@ -35,12 +35,21 @@ const ShoeCard = ({
     <Link href={`/shoe/${slug}`}>
       <Wrapper>
         <ImageWrapper>
+          {variant === "on-sale" ? (
+            <SaleTag>Sale</SaleTag>
+          ) : variant === "new-release" ? (
+            <JustReleasedTag>Just Released!</JustReleasedTag>
+          ) : null}
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
+          {variant === "on-sale" ? (
+            <SalePrice>{formatPrice(price)}</SalePrice>
+          ) : (
+            <Price>{formatPrice(price)}</Price>
+          )}
         </Row>
         <Row>
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
@@ -85,6 +94,32 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+`;
+
+const SaleTag = styled.span`
+  background-color: ${COLORS.primary};
+  color: ${COLORS.white};
+  border-radius: 2px;
+  position: absolute;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  top: 12px;
+  right: -4px;
+`;
+
+const JustReleasedTag = styled.span`
+  background-color: ${COLORS.secondary};
+  color: ${COLORS.white};
+  position: absolute;
+  border-radius: 2px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  top: 12px;
+  right: -4px;
 `;
 
 export default ShoeCard;
