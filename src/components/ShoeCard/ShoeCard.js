@@ -108,30 +108,28 @@ const SalePrice = styled.span`
   color: ${COLORS.primary};
 `;
 
-const SaleTag = styled.span`
-  background-color: ${COLORS.primary};
+const Tag = styled.span`
   color: ${COLORS.white};
   border-radius: 2px;
   position: absolute;
   padding: 0 10px;
-  display: flex;
-  align-items: center;
+  /* Also works for centering the text */
+  /* display: flex; */
+  /* align-items: center; */
+  line-height: 32px;
   height: 32px;
   top: 12px;
   right: -4px;
+  font-weight: ${WEIGHTS.bold};
+  font-size: ${14 / 16}rem;
 `;
 
-const JustReleasedTag = styled.span`
+const SaleTag = styled(Tag)`
+  background-color: ${COLORS.primary};
+`;
+
+const JustReleasedTag = styled(Tag)`
   background-color: ${COLORS.secondary};
-  color: ${COLORS.white};
-  position: absolute;
-  border-radius: 2px;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  height: 32px;
-  top: 12px;
-  right: -4px;
 `;
 
 export default ShoeCard;
