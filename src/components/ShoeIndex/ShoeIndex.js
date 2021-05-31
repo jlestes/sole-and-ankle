@@ -59,6 +59,7 @@ const Header = styled.header`
   align-items: baseline;
   justify-content: space-between;
   flex: 1;
+  gap: 16px;
 `;
 
 const Title = styled.h2`
